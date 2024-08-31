@@ -26,7 +26,7 @@ const Order = () => {
       return;
     }
     try {
-      await axios.post('http://10.0.0.5:5000/api/order', { coffeeType, clientName, phoneNumber });
+      await axios.post('https://api-takeandgo.vercel.app/api/order', { coffeeType, clientName, phoneNumber });
       setCoffeeType('');
       setClientName('');
       setPhoneNumber('');
