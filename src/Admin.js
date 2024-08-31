@@ -20,7 +20,7 @@ const Admin = () => {
 
   const fetchOrders = async () => {
     try {
-      const result = await axios.get('http://10.0.0.5:5000/api/orders');
+      const result = await axios.get('https://api-takeandgo.vercel.app/api/orders');
       setOrders(result.data);
     } catch (error) {
       console.error('Error fetching orders:', error);
@@ -29,7 +29,7 @@ const Admin = () => {
 
   const updateOrderStatus = async (id, status) => {
     try {
-      await axios.put(`http://10.0.0.5:5000/api/orders/${id}`, { status });
+      await axios.put(`https://api-takeandgo.vercel.app/api/orders/${id}`, { status });
       fetchOrders();
     } catch (error) {
       console.error('Error updating order status:', error);
@@ -38,7 +38,7 @@ const Admin = () => {
 
   const deleteOrder = async (id) => {
     try {
-      await axios.delete(`http://10.0.0.5:5000/api/orders/${id}`);
+      await axios.delete(`https://api-takeandgo.vercel.app/api/orders/${id}`);
       fetchOrders();
     } catch (error) {
       console.error('Error deleting order:', error);
